@@ -1,20 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import Header from "./component/Header";
+import Profile from "./component/profile";
+import Find from "./component/SearchBar";
 
-export default function App() {
+const Apprenants = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <>
+      <SafeAreaProvider>
+        <Header />
+        <Find />
+        <Profile />
+      </SafeAreaProvider>
+    </>
+  )
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+
+  head: {
+    flex: 0.8,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  mid: {
+    flex: 0.8,
+  },
+  body: {
+    flex: 7,
+    backgroundColor: 'red',
+  },
+
 });
+
+export default Apprenants;
